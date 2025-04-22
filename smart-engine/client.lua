@@ -7,19 +7,18 @@ CreateThread(function()
         if IsControlJustPressed(0, 75) then  -- G key
             local ped = PlayerPedId()
 
+            -- Make sure the player is in a vehicle
             if IsPedInAnyVehicle(ped, false) then
                 local veh = GetVehiclePedIsIn(ped, false)
 
-                -- Only the driver
+                -- Ensure the player is the driver of the vehicle
                 if GetPedInVehicleSeat(veh, -1) == ped then
-                    -- Make sure vehicle engine is running
+                    -- Check if the engine is running before attempting to turn it off
                     if GetIsVehicleEngineRunning(veh) then
-                        -- OPTIONAL: check for keys using qb-vehiclekeys
-                        if exports['qb-vehiclekeys']:HasKeys(veh) then
-                            -- Only shut off if LEFT SHIFT is NOT held
-                            if not IsControlPressed(0, 21) then
-                                SetVehicleEngineOn(veh, false, false, true)
-                            end
+                        -- Turn off the engine only if LEFT SHIFT is NOT pressed
+                        if not IsControlPressed(0, 21) then  -- 21 = LEFT SHIFT
+                            SetVehicleEngineOn(veh, false, false, true)
+                            print("Vehicle engine has been turned off.")  -- Debugging line
                         end
                     end
                 end
@@ -28,5 +27,5 @@ CreateThread(function()
     end
 end)
 
--- ✅ Print your dev tag to the console
+-- Debug message to confirm script is loaded
 print("^3[smart-engine-exit]^0 by ^2Zixja^0 has started.")

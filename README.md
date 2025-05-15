@@ -27,6 +27,7 @@ Drop the smart-engine-exit folder into your resources directory.
 Add this to your server.cfg: ensure smart-engine-exit
 
 🧠 Compatibility
+
 ✅ QBCore
 
 ✅ ESX

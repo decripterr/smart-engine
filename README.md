@@ -1,4 +1,4 @@
-Plug and play  with QBCoreSmart behavior: hold **LEFT SHIFT** to keep engine running. Compatible with `qb-vehiclekeys` (only shuts off engine if player has keys) Compatible with `lux-vehiclecontrol` and `/engine` command Minimal, client-side only, no performance impact
+🔌 smart-engine-exit A lightweight and immersive FiveM script that intelligently manages vehicle engine behavior when the player exits the vehicle. Designed for realism and flexibility, this script ensures your vehicle engine shuts off (or not) based on player intent, with built-in support for QBCore, ESX, and vanilla setups.Plug and play
 
 ✨ Features
 
